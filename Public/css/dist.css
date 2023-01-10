@@ -74,6 +74,7 @@ html *{
 	text-decoration: none;
 }
 
+
 /* display active or not */
 .displayNone{
     display: none;
@@ -176,6 +177,16 @@ a{
     }
 }
 
+/* link */
+.link{
+    text-decoration: none;
+    position: relative;
+}
+
+.link:hover{
+   text-decoration: underline;
+}
+
 /* Loader */
 
 #loader{
@@ -187,20 +198,39 @@ a{
     width: 100%;
     height: 100vh;
     background-color: var(--beige-primary);
+    text-align: center;
 }
 
-#loader > p:first-child{
+#loader > p > span{
+    line-height: 110%;
+    font-size: 56px;
+    text-transform: rotate(30deg);
+    animation: loaderRotate 1s infinite linear;
+}
+
+#loader > p{
     animation: loader 2s infinite ease-in-out; 
 }
 
 @keyframes loader{
     0%{
-        scale: 1;
+        transform: scale(1);
     }
     50%{
-        scale: 1.3;
+        transform: scale(1.2);
     }
     100%{
-        scale: 1;
+        transform: scale(1);
     }
 }
+
+@media (max-device-width : 800px){
+    #loader > p > span{
+        line-height: 110%;
+        font-size: 40px;
+        text-transform: rotate(30deg);
+        animation: loaderRotate 1s infinite linear;
+    }
+}
+
+

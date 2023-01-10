@@ -39,18 +39,23 @@ main{
     animation: Intro cubic-bezier(0.445, 0.050, 0.550, 0.950) infinite 3s;
 }
 
-
 @keyframes Intro {
     0% {
         transform: scale(0.9);
       }
       50% {
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
       100% {
         transform: scale(0.9);
       }
 }
+
+
+.instruction-section > div > div:first-child{
+    transform: scale(1.50);
+}
+
 
 @media (max-device-width : 800px){
     .instruction-section{
@@ -61,20 +66,23 @@ main{
         background-size: cover;
     }
     .logo-section{
-        scale: 0.8;
+        transform: scale(0.9);
         margin-bottom: 0px;
     }
 
     @keyframes Intro {
         0%{
-            transform: scale(0.8);
-        }
-        50%{
             transform: scale(0.9);
         }
-        100%{
-            transform: scale(0.8);
+        50%{
+            transform: scale(1);
         }
+        100%{
+            transform: scale(0.9);
+        }
+    }
+    .instruction-section > div > div:first-child{
+        transform: scale(1.15);
     }
 
 }
@@ -143,7 +151,7 @@ main{
     margin: auto;
     
 }
-
+.scratch-information > a,
 .scratch-information > h3,
 .scratch-information > h4{
     text-align: center;
@@ -151,12 +159,13 @@ main{
     align-items: center;
 }
 
+.scratch-information > a > svg,
 .scratch-information > h3 > span,
 .scratch-information > h4 > span{
     margin: 0px 6px 0px 6px;
 }
 
-.scratch-information > h4 > svg{
+.scratch-information > a > svg{
     transform: scale(1.3);
     animation: arrowLight 1.5s infinite linear;
 }
