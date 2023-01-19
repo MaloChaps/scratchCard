@@ -10,5 +10,11 @@
         "title": "Grattez et<br> decouvrez votre prix !",
         "code": "utilise ton code",
         "externallink": "iciiiiiii !"
+    },
+    "de": {
+        "loading": "Laden",
+        "title": "Kratze und entdecke<br> deinen Preis!",
+        "code": "benutze deinen Code",
+        "externallink": "hier!"
     }
 }

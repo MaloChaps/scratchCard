@@ -12,11 +12,26 @@ main{
     position: relative;
 }
 
-.lang-button{
+.nav-section{
     position: absolute;
-    z-index: 4;
-    top: 12px;
-    left: 12Px;
+    z-index: 1;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    width: 100%;
+}
+
+.nav-section > div:last-child{
+    display: flex;
+}
+.nav-section > div:last-child > p{
+    margin-right: 8px;
+}
+.nav-section > div:last-child > p:last-child{
+    margin-right: 0px;
 }
 
 @media (max-device-width : 800px){
@@ -213,6 +228,6 @@ main{
         left: -10px;
     }
     .scratch-section{
-        padding-bottom: 32px;
+        padding-bottom: 72px;
     }
 }

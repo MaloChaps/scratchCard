@@ -159,6 +159,14 @@ a{
     line-height: 100%;
 }
 
+.LightTitle-14{
+    font-family: 'Brice-Regular';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 100%;
+}
+
 @media (max-device-width : 800px){
     .BigTitle-32{
         font-size: 28px;
@@ -185,6 +193,7 @@ a{
 
 .link:hover{
    text-decoration: underline;
+   cursor: pointer;
 }
 
 /* Loader */
