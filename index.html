@@ -44,9 +44,15 @@
 </head>
 <body>
 	<div id="loader"><p class="LightTitle-18 black TextUppercase Loader-Section">
-		<p class="BigTitle-24 black"><span>🤑</span><br>Loading</p>
+		<p class="BigTitle-24 black" id="lang-loading"><span>🤑</span><br>Loading</p>
 	</div>
 	<main>
+		<!-- Lang -->
+		<div class="lang-button">
+			<button onclick="updateContent('fr')">Francais</button>
+			<button onclick="updateContent('es')">Spanish</button>
+		</div>
+		
 		<section class="instruction-section">
 			<div class="logo-section">
 				<svg width="308" height="223" viewBox="0 0 308 223" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -295,7 +301,7 @@
 						<path d="M49.0277 98.0325L48.642 98.3181L48.6559 97.8672C48.7118 96.2176 48.7453 94.4639 48.5016 92.7714C48.4875 92.6937 48.4437 92.5062 48.2577 92.497C48.1312 92.4868 47.9713 92.5846 47.9272 92.6913C47.4698 93.8382 47.077 95.0215 46.7473 96.2065C46.7231 96.2882 46.7614 96.3578 46.7805 96.3925C46.8294 96.4635 46.9089 96.518 46.9895 96.5197C47.1791 96.5316 47.315 96.3684 47.3601 96.2091C47.4048 96.0428 47.4601 95.8779 47.5118 95.7102L48.0454 93.9461L48.0732 95.4393C48.0954 96.5869 48.0588 97.7495 48.0212 98.7442C48.0192 98.7761 48.0632 99.1176 48.0857 99.1482L48.138 98.9944L47.9343 99.2059L47.5498 99.5927C47.4427 99.6977 47.3422 99.7944 47.2348 99.8925C47.2182 99.9132 47.1981 99.9312 47.1815 99.9519C47.0956 100.06 47.0227 100.225 47.1158 100.343C47.1716 100.413 47.2683 100.46 47.3664 100.462C47.4295 100.464 47.4811 100.443 47.5247 100.403C48.2021 99.7662 48.8431 99.1015 49.4244 98.4311C49.4674 98.3771 49.4985 98.294 49.491 98.2079C49.4871 98.1247 49.4521 98.051 49.4013 98.0119C49.2927 97.9351 49.1566 97.9443 49.0313 98.0353L49.0277 98.0325Z" fill="#111111"/>
 					</svg>	
 				</div>
-				<h2 class="BigTitle-24 TextUppercase red">Scratch and reveal<br>your prize!</h2>
+				<h2 class="BigTitle-24 TextUppercase red" id="lang-title">Scratch and reveal<br>your prize!</h2>
 			</div>
 		</section>
 		
@@ -308,7 +314,7 @@
 			</div>
 
 			<div class="scratch-information">
-				<h3 class="BigTitle-24 black TextUppercase">use your code
+				<h3 class="BigTitle-24 black TextUppercase" id="lang-code">use your code
 					<svg width="61" height="66" viewBox="0 0 61 66" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<g clip-path="url(#clip0_687_42455)">
 						<path d="M49.5283 35.9563C49.1752 35.3972 48.5138 35.1728 47.8824 35.3429C47.578 35.424 47.3047 35.5872 47.0981 35.8245C46.852 36.104 46.6329 36.5048 46.5985 36.8808C46.5374 37.5416 47.1274 38.0383 47.5833 38.4204C47.8692 38.6597 48.3125 38.5616 48.6225 38.4294C48.9707 38.2801 49.2077 38.0213 49.4159 37.7126C49.5948 37.4467 49.7704 37.1868 49.7824 36.8549C49.7947 36.5362 49.6969 36.2249 49.5283 35.9563Z" fill="#FFD832"/>
@@ -434,7 +440,7 @@
 						<path d="M18.0491 25.1814L8.76207 19.6758L9.62154 23.4051L0.902527 22.6727L0.902527 27.6902L9.62101 26.9577L8.76207 30.6865L18.0491 25.1814Z" fill="#E63D41"/>
 						<path d="M17.1467 24.9083L7.85967 19.4027L8.71914 23.1321L0.00012207 22.3996L0.00012207 27.4171L8.7186 26.6846L7.85967 30.4134L17.1467 24.9083Z" fill="#FFD832"/>
 					</svg>
-					hereeee!
+					<span id="lang-externallink">hereeee!</span>	
 					<svg width="22" height="51" viewBox="0 0 22 51" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M3.85837 35.4895L14.6258 36.2785L11.7893 38.8478L19.363 43.2292L16.4958 47.3468L9.75966 41.7635L8.33366 45.3143L3.85837 35.4895Z" fill="#E63D41"/>
 						<path d="M4.75504 35.7811L15.5225 36.5701L12.686 39.1393L20.2597 43.5208L17.3924 47.6383L10.6563 42.055L9.23033 45.6058L4.75504 35.7811Z" fill="#FFD832"/>
@@ -476,6 +482,37 @@
 			// The cursor (coin) image
 			cursor: 'url(Public/img/coin.png) 5 5, pointer',
 		});
+
+		// translation
+
+		function updateContent(language) {
+			let currentUrl = location.href;
+			let urlSegments = currentUrl.split('/');
+			urlSegments.splice(3,0,[language]);
+			let newUrl = urlSegments.join('/');
+			location.href = newUrl;
+			
+			
+			langUrlSegment = newUrl.split('/');
+			language = langUrlSegment[langUrlSegment.length - 2];
+			console.log(language);
+
+			fetch('lang.json')
+			.then(response => response.json())
+			.then(data => {
+				let translations = data;
+				document.getElementById("lang-loading").innerHTML = translations[language]["loading"];
+				document.getElementById("lang-title").innerHTML = translations[language]["title"];
+				document.getElementById("lang-code").innerHTML = translations[language]["code"];
+				document.getElementById("lang-externallink").innerHTML = translations[language]["externallink"];
+			});
+
+			
+		}
+
+		
+
+		
     </script>
 
 </body>

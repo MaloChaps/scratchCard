@@ -1,0 +1,14 @@
+{
+    "es": {
+        "loading": "cargando",
+        "title": "¡Raspar y revelar<br>tu premio!",
+        "code": "utilice su código",
+        "externallink": "¡aquíííííí!"
+    },
+    "fr": {
+        "loading": "loading",
+        "title": "Grattez et<br> decouvrez votre prix !",
+        "code": "utilise ton code",
+        "externallink": "iciiiiiii !"
+    }
+}

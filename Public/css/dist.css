@@ -1,11 +1,11 @@
 @font-face {
 	font-family: "Brice-Regular";
-	src: url('../fonts/Brice-Regular.otf');
+	src: url('../fonts/Brice-Regular.ttf');
 }
 
 @font-face {
 	font-family: "Brice-BlackSemiExpanded";
-	src: url('../fonts/Brice-BlackSemiExpanded.otf');
+	src: url('../fonts/Brice-BlackSemiExpanded.ttf');
 }
 
 
